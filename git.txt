@@ -1,9 +1,9 @@
+- 구조
 1. working directory	- working tree
-2. staging area		- index
+2. staging area		- index	( git add로 추가 )
 3. repository
 
-순서도
-
+- 순서도
 1) cd "폴더명" ~> 폴더(working directory) 진입
 2) *config user.name "사용자 이름" ~> 초기 설정 1
 3) *config user.email "사용자 이메일" ~> 초기 설정 2
@@ -11,17 +11,17 @@
 5) git commit -m "수정된 내용 표기" ~> 커밋
 6) git status ~> 파일들의 add 상태 출력
 
-add <-> reset
+*add <-> reset
 
-git init : 현재 디렉토리를 Git이 관리하는 프로젝트 디렉토리(=working directory)로 설정하고 그 안에 레포지토리(.git 디렉토리) 생성
-git config user.name 'codeit' : 현재 사용자의 아이디를 'codeit'으로 설정(커밋할 때 필요한 정보)
-git config user.email 'teacher@codeit.kr' : 현재 사용자의 이메일 주소를 'teacher@codeit.kr'로 설정(커밋할 때 필요한 정보)
-git add [파일 이름] : 수정사항이 있는 특정 파일을 staging area에 올리기
-git add [디렉토리명] : 해당 디렉토리 내에서 수정사항이 있는 모든 파일들을 staging area에 올리기 
-git add . : working directory 내의 수정사항이 있는 모든 파일들을 staging area에 올리기
-git reset [파일 이름] : staging area에 올렸던 파일 다시 내리기
-git status : Git이 현재 인식하고 있는 프로젝트 관련 내용들 출력(문제 상황이 발생했을 때 현재 상태를 파악하기 위해 활용하면 좋음) 
-git commit -m "커밋 메시지" : 현재 staging area에 있는 것들 커밋으로 남기기
+● git init : 현재 디렉토리를 Git이 관리하는 프로젝트 디렉토리(=working directory)로 설정하고 그 안에 레포지토리(.git 디렉토리) 생성
+● git config user.name 'codeit' : 현재 사용자의 아이디를 'codeit'으로 설정(커밋할 때 필요한 정보)
+● git config user.email 'teacher@codeit.kr' : 현재 사용자의 이메일 주소를 'teacher@codeit.kr'로 설정(커밋할 때 필요한 정보)
+● git add [파일 이름] : 수정사항이 있는 특정 파일을 staging area에 올리기
+● git add [디렉토리명] : 해당 디렉토리 내에서 수정사항이 있는 모든 파일들을 staging area에 올리기 
+● git add . : working directory 내의 수정사항이 있는 모든 파일들을 staging area에 올리기
+● git reset [파일 이름] : staging area에 올렸던 파일 다시 내리기
+● git status : Git이 현재 인식하고 있는 프로젝트 관련 내용들 출력(문제 상황이 발생했을 때 현재 상태를 파악하기 위해 활용하면 좋음) 
+● git commit -m "커밋 메시지" : 현재 staging area에 있는 것들 커밋으로 남기기
 
 ***
 1. 커밋 예정인 폴더 내에서 git init 입력 -> 비어있는 레포지토리를 생성
@@ -31,5 +31,16 @@ git commit -m "커밋 메시지" : 현재 staging area에 있는 것들 커밋�
 3. add: 커밋한 파일을 미리 지정, 수정된 파일의 모습이 커밋에 포함될 것이라 지정하는 것
 4. 커밋에 필요한 것: 이름, 이메일, 커밋에 대한 정보(커밋 메시지): -m(옵션 -m, 커밋 메시지 남기기)
 
+<1. create a new repository on the command line>
+echo "# Git" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/DeApocalypse/Git.git
+git push -u origin main
 
-
+<2. push an existing repository from the command line>
+git remote add origin https://github.com/DeApocalypse/Git.git
+git branch -M main
+git push -u origin main
